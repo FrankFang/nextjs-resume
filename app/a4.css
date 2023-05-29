@@ -1,0 +1,42 @@
+@page {
+  size: 21cm 29.7cm;
+  margin: 0;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.page {
+  max-width: 21cm;
+  max-height: 29.7cm;
+  margin-left: auto;
+  margin-right: auto;
+}
+.page + .page {
+  margin-top: 64px;
+}
+@media print {
+  .page:not(:last-child) {
+    /* page-break-after: always; */
+    page-break-inside: avoid;
+    width: 21cm;
+    height: 29.7cm;
+  }
+  .page:not(:first-child) {
+    padding: 16px;
+  }
+  .page + .page {
+    margin-top: 0;
+  }
+}

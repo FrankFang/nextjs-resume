@@ -1,113 +1,196 @@
 import Image from 'next/image'
+import { memo, useMemo } from "react"
+import { FC, PropsWithChildren } from "react"
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    <div>
+      <section className="page flex relative">
+        <aside className="sticky top-0 shrink-0 h-screen bg-[#003d73] text-white">
+          <Box className="py-4">
+            <h1 className="text-2xl">
+              Frank Fang
+            </h1>
+            <p>
+              Full Stack Engineer
+            </p>
+          </Box>
+          <Box className="bg-[#00315c] py-2">
+            <h2>
+              Contact
+            </h2>
+          </Box>
+          <Box className="py-4">
+            <dl className="max-w-[10em] [&>dd+dt]:pt-4 [&>dd]:text-xs">
+              <dt>Email</dt>
+              <dd><a className="border-b-[1px] border-inherit" href="mailto:ff_online@outlook.com">ff_online@outlook.com</a></dd>
+              <dt>LinkedIn</dt>
+              <dd>
+                <a className="underline" href="https://www.linkedin.com/in/frank-fang-39387847/">
+                  linkedin.com/in/frank-fang-39387847/
+                </a>
+              </dd>
+              <dt>GitHub</dt>
+              <dd>
+                <a className="underline" href="https://github.com/frankfang">
+                  github.com/frankfang
+                </a>
+              </dd>
+            </dl>
+          </Box>
+          <Box className="bg-[#00315c] py-2">
+            <h2>Technical Profile</h2>
+          </Box>
+          <Box className="py-4">
+            <ul className="list-disc list-inside">
+              <li>JavaScript</li>
+              <li>TypeScript</li>
+              <li>Ruby on Rails</li>
+              <li>HTML5 + CSS3</li>
+              <li>React + Hooks </li>
+              <li>Jest</li>
+              <li>Vite</li>
+              <li>Next.js</li>
+              <li>Golang + Gin</li>
+              <li>PostgreSQL</li>
+              <li>Docker</li>
+              <li>Git</li>
+              <li>Linux</li>
+            </ul>
+          </Box>
+        </aside>
+        <main className="px-6 py-4">
+          <article>
+            Respectful self-motivator gifted at finding reliable solutions for software issues.
+            Experienced in Front-end development and Back-end development and offering skills in
+            JavaScript, TypeScript, React, Ruby on Rails, Golang and Gin.
+            Fluent in English and mandarin.
+            Accustomed to working with cross-cultural, global teams.
+          </article>
+          <Title>Education</Title>
+          <Education>
+            <dt>
+              <div>
+                <h3>Huazhong University of Science and Technology</h3>
+              </div>
+              <div className="minor">2008 - 2012</div>
+            </dt>
+            <dd>
+              Bachelor of Software Engineering
+            </dd>
+          </Education>
+          <Title>Experience</Title>
+          <WorkExperience>
+            <dt>
+              <div className="">
+                <h3> Full Stack Engineer </h3>
+                <div className="minor">Jirengu Inc., Hangzhou, China</div>
+              </div>
+              <div className="minor"> Jan 2017 - Present </div>
+            </dt>
+            <dd>
+              <List>
+                <li>Managed and trained a team of junior developers to ensure the quality of website architecture and user experience.</li>
+                <li>Built and maintained a robust online education system using Vue and React frameworks, including the marketing and live streaming modules.</li>
+                <li>Collaborated closely with designers and project managers to deliver high-quality solutions on time and within budget.</li>
+                <li>Improved the website performance and user experience by implementing responsive design and optimizing the codebase.</li>
+                <li>Developed and implemented best practices for coding standards, code reviews, and testing procedures to ensure high-quality code and efficient development.</li>
+              </List>
+            </dd>
+            <dt>
+              <div className="">
+                <h3> Full Stack Engineer </h3>
+                <div className="minor">Colorway Inc., Chengdu, China</div>
+              </div>
+              <div className="minor"> Aug 2016 - Dec 2016 </div>
+            </dt>
+            <dd>
+              <List>
+                <li>Worked on full-stack and developed user-friendly web interfaces using Rails and jQuery.</li>
+                <li>Built solid API for mobile apps.</li>
+              </List>
+            </dd>
+            <dt>
+              <div className="">
+                <h3>Senior Frond-end Engineer</h3>
+                <div className="minor">Alibaba Group, Hangzhou, China</div>
+              </div>
+              <div className="minor">Jul 2014 - Jul 2016</div>
+            </dt>
+            <dd>
+              <List>
+                <li>Built and maintained front-end infrastructure such as scaffolding, UI frameworks, and component libraries to ensure the consistency and scalability of the company's web applications.</li>
+                <li>Conducted research and development on new technologies and frameworks, including PWA, Vue.js, and React, and developed strategies to implement them in production environments.</li>
+                <li>Worked on the development and maintenance of the company's CRM system, which involved collaborating with cross-functional teams to ensure the application's robustness, scalability, and responsiveness.</li>
+                <li>Conducted code reviews, provided feedback and mentorship to junior developers, and promoted best practices in coding standards, testing, and deployment procedures.</li>
+              </List>
+            </dd>
+            <dt>
+            <div>
+              <h3>Senior Frond-end Engineer</h3>
+              <div className="minor">Brothers Bridge Technology, Wuhan, China</div>
+            </div>
+            <div className="minor">Jul 2013 - Jul 2014</div>
+          </dt>
+          <dd>
+            Skill: Backbone.js, AngularJS 1.x
+          </dd>
+          <dt>
+            <div>
+              <h3>Frond-end Engineer</h3>
+              <div className="minor">Tencent, Shenzhen, China</div>
+            </div>
+            <div className="minor">Jul 2012 - Jul 2013</div>
+          </dt>
+          <dd>
+            Skill: CSS3, JavaScript, jQuery, Photoshop
+          </dd>
+          </WorkExperience>
+        </main>
+      </section>
+    </div>
   )
 }
+
+const Box: FC<PropsWithChildren & { className?: string }> = memo(({ children, className }) => {
+  return (
+    <div className={`px-4 ${className}`} >
+      {children}
+    </div >
+  )
+})
+
+const List: FC<PropsWithChildren & { className?: string }> = memo(({ children, className }) => {
+  return (
+    <ul className="[&>li]:before:content-['•'] [&>li]:before:inline-block
+      [&>li]:before:w-[0.8em] [&>li]:before:text-gray-400">
+      {children}
+    </ul>
+  )
+})
+
+const WorkExperience: FC<PropsWithChildren & { className?: string }> = memo(({ children, className }) => {
+  return (
+    <dl className={`[&>dt]:flex [&>dt]:justify-between [&>dt]:my-1 [&>dd]:border-b
+    [&>dd]:pb-2 [&>dd]:mb-2 [&_h3]:font-bold [&_.minor]:text-gray-400 ${className}`}>
+      {children}
+    </dl>
+  )
+})
+
+const Education: FC<PropsWithChildren & { className?: string }> = memo(({ children, className }) => {
+  return (
+    <dl className={`[&>dt]:flex [&>dt]:justify-between [&>dt]:my-1 [&>dd]:border-b
+    [&>dd]:pb-2 [&>dd]:mb-2 [&_h3]:font-bold [&_.minor]:text-gray-400 ${className}`}>
+      {children}
+    </dl>
+  )
+})
+
+const Title: FC<PropsWithChildren & { className?: string }> = memo(({ children, className }) => {
+  return (
+    <h2 className="text-2xl border-b-[1px] border-[#d5d6d6] mt-1 py-1">
+      {children}
+    </h2>
+  )
+})
