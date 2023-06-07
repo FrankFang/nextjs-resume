@@ -61,11 +61,12 @@ export default function Home() {
         </aside>
         <main className="px-6 py-4">
           <article>
-            Respectful self-motivator gifted at finding reliable solutions for software issues.
             Experienced in Front-end development and Back-end development and offering skills in
-            JavaScript, TypeScript, React, Ruby on Rails, Golang and Gin.
+            JavaScript, TypeScript, React, Ruby on Rails and Golang.
+            While I possess extensive experience in frontend development, my exposure to large-scale
+            backend projects has been limited. Nevertheless, I am highly motivated and possess a strong aptitude for
+            learning, and I am confident in my ability to quickly acquire the necessary skills and identify effective solutions.
             Fluent in English and mandarin.
-            Accustomed to working with cross-cultural, global teams.
           </article>
           <Title>Education</Title>
           <Education>
@@ -83,18 +84,17 @@ export default function Home() {
           <WorkExperience>
             <dt>
               <div className="">
-                <h3> Full Stack Engineer </h3>
+                <h3>Senior Full Stack Engineer </h3>
                 <div className="minor">Jirengu Inc., Hangzhou, China</div>
               </div>
               <div className="minor"> Jan 2017 - Present </div>
             </dt>
             <dd>
               <List>
-                <li>Managed and trained a team of junior developers to ensure the quality of website architecture and user experience.</li>
-                <li>Built and maintained a robust online education system using Vue and React frameworks, including the marketing and live streaming modules.</li>
-                <li>Collaborated closely with designers and project managers to deliver high-quality solutions on time and within budget.</li>
-                <li>Improved the website performance and user experience by implementing responsive design and optimizing the codebase.</li>
+                <li>Built and maintained an <a href="https://xiedaimala.com">online education system</a> using Vue and React frameworks, including the marketing and live streaming modules.</li>
+                <li>Improved the website performance and user experience.</li>
                 <li>Developed and implemented best practices for coding standards, code reviews, and testing procedures to ensure high-quality code and efficient development.</li>
+                <li>Built <a href="http://www.bingcaoyueke.com/">a SaaS application based on React and Rails</a> and <a href="https://quwenai.com">an Chinese AI chatting app forked from ChatGPT-Next-Web</a> </li>
               </List>
             </dd>
             <dt>
@@ -106,7 +106,8 @@ export default function Home() {
             </dt>
             <dd>
               <List>
-                <li>Worked on full-stack and developed user-friendly web interfaces using Rails and jQuery.</li>
+                <li>Maintained <a href="https://www.linkedin.com/company/%E7%9F%A5%E4%BA%BA/about/">an human resources platform</a> using Rails.</li>
+                <li>Developed user-friendly web interfaces using Rails and jQuery.</li>
                 <li>Built solid API for mobile apps.</li>
               </List>
             </dd>
@@ -120,7 +121,7 @@ export default function Home() {
             <dd>
               <List>
                 <li>Built and maintained front-end infrastructure such as scaffolding, UI frameworks, and component libraries to ensure the consistency and scalability of the company's web applications.</li>
-                <li>Conducted research and development on new technologies and frameworks, including PWA, Vue.js, and React, and developed strategies to implement them in production environments.</li>
+                <li>Conducted research and development on new technologies and frameworks, including Vue and React, and developed strategies to implement them in production environments.</li>
                 <li>Worked on the development and maintenance of the company's CRM system, which involved collaborating with cross-functional teams to ensure the application's robustness, scalability, and responsiveness.</li>
                 <li>Conducted code reviews, provided feedback and mentorship to junior developers, and promoted best practices in coding standards, testing, and deployment procedures.</li>
               </List>
@@ -171,7 +172,7 @@ const List: FC<PropsWithChildren & { className?: string }> = memo(({ children, c
 
 const WorkExperience: FC<PropsWithChildren & { className?: string }> = memo(({ children, className }) => {
   return (
-    <dl className={`[&>dt]:flex [&>dt]:justify-between [&>dt]:my-1 [&>dd]:border-b
+    <dl className={`[&>dt]:flex [&>dt]:justify-between [&>dt]:my-1 [&>dd]:border-b [&_a]:underline
     [&>dd]:pb-2 [&>dd]:mb-2 [&_h3]:font-bold [&_.minor]:text-gray-400 ${className}`}>
       {children}
     </dl>
